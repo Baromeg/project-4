@@ -1,5 +1,6 @@
 ### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) 
 
+### General Assembly, Software Engineering Immersive
 
 # Project-4 - Know Your Heritage
 ## Overview:
@@ -14,6 +15,7 @@ The app was built within 7 days by a team of 2 people, applying all the concepts
 
 I developed the nested connections with the different API’s, first to access the UNESCO list, second to retrieve the location-ID from Google API and third to retrieve the Google images using the location-ID to achieve the correct seeding. Built the home page and completed the styling of the app.
 
+![app working](frontend/styles/heritage.gif)
 
 ## Brief:
 - Work in a pair, using git to code collaboratively.
