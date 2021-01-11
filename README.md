@@ -207,6 +207,12 @@ def signup():
     return user_schema.jsonify(user), 200
 ```
 
+## Screenshots
+- Single & Comments Page
+![Single Page](frontend/styles/singlepage.png)
+
+- User & Favourites Page
+![User Page](frontend/styles/userpage.png)
 
 ## Potential Future Features
 - Ratings to be imported from google or tripadvisor.
