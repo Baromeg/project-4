@@ -229,4 +229,4 @@ We had lots more ideas that we couldn't fit in the timescale. Such as showing th
 Overall,  we both enjoyed the project learned a lot especially about `Python`, `RDBMS`. We are excited to continue working on it, so these features will be added over time.
 
 ## Contributors
-- Csilla Barna
+- [Csilla Barna](https://github.com/csillabarna/)
