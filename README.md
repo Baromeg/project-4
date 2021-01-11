@@ -15,6 +15,8 @@ The app was built within 7 days by a team of 2 people, applying all the concepts
 
 I developed the nested connections with the different API’s, first to access the UNESCO list, second to retrieve the location-ID from Google API and third to retrieve the Google images using the location-ID to achieve the correct seeding. Built the home page and completed the styling of the app.
 
+Find it here! --> [Know your Heritage](https://baromeg.github.io/project-2/)
+
 ![app working](frontend/styles/heritage.gif)
 
 ## Brief:
@@ -46,7 +48,7 @@ Technologies Used:
 * GitHub
 * Insomnia
 * Heroku
-* API’s
+* API’s ( [UNESCO Heritage list](https://data.opendatasoft.com/explore/dataset/world-heritage-list%40public-us/information/?disjunctive.states&sort=date_inscribed), [Google Places - Textsearch](https://maps.googleapis.com/maps/api/place/textsearch/), [Google Places - Details](https://maps.googleapis.com/maps/api/place/details/), [mapbox](https://docs.mapbox.com/api/))
 * Mapbox (React-MapGL)
 * Cloudinary
 * Google API's
@@ -226,3 +228,5 @@ We had lots more ideas that we couldn't fit in the timescale. Such as showing th
 
 Overall,  we both enjoyed the project learned a lot especially about `Python`, `RDBMS`. We are excited to continue working on it, so these features will be added over time.
 
+## Contributors
+- Csilla Barna
