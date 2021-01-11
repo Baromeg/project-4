@@ -34,7 +34,7 @@ Technologies Used:
 * JavaScript (ES6)
 * Python 3
 * Flask
-* PostgresDB
+* PostgreSQL
 * Marshmallow
 * SQLalchemy
 * Bcrypt & JWT
