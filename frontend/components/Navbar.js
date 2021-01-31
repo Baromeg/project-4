@@ -27,8 +27,8 @@ const Navbar = (props) => {
 
   return <nav className="navbar is-link" role='navigation' aria-label="main navigation">
     <div className="navbar-brand">
-      <Link to="/">
-        <img className="image is-64x64" id="logo" src="https://res.cloudinary.com/greenupload/image/upload/v1607631126/logo_gva9qr.jpg" alt="logo" /></Link>
+      <Link to="/" id="logolink">
+        <img className="image is-5by3 pt-2 pl-2 pb-2" id="logo" src="https://res.cloudinary.com/greenupload/image/upload/v1607631126/logo_gva9qr.jpg" alt="logo" /></Link>
       <div className="navbar-item">
         <div className="buttons ">
           {/* <Link className="button is-light" to="/">Home</Link> */}

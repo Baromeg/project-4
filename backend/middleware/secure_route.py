@@ -11,8 +11,7 @@ def secure_route(func):
     clean_token = raw_token.replace('Bearer ', '')
 
     try:
-      payload = jwt.decode(clean_token,secret)
-
+      payload = jwt.decode(clean_token, secret)
       user_id = payload['sub']
       user = User.query.get(user_id)
 

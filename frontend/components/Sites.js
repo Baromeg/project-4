@@ -32,16 +32,16 @@ const Sites = () => {
 
   return <>
 
-    <div className="columns is-mobile is-centered section">
-      <div className="field has-addons column is-half has-text-centered is-align-items-center">
+    <div className="columns is-mobile is-centered section pt-4 pb-2">
+      <div className="field column is-half has-text-centered is-align-items-center pb-0">
         <div className="control bd-notification is-primary is-centered">
           <input className="input search is-large"
             placeholder="Type a country"
             onChange={(event) => updateSearch(event.target.value)}
             value={search} />
         </div>
-        <div className="control">
-          <button className="button is-link is-large"
+        <div className="control pt-2 ">
+          <button className="button is-link is-large "
             onClick={() => {
               updateSearched(search)
             }}>
@@ -51,7 +51,7 @@ const Sites = () => {
       </div>
     </div>
 
-    <div className="columns is-multiline is-mobile">
+    <div className="columns is-multiline is-mobile pt-0">
       {sites.slice(0, 20).map((site, index) => {
         return <div
           className="column is-one-third-desktop is-half-tablet is-half-mobile"

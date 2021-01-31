@@ -1,4 +1,8 @@
 @charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
 // Set your brand colors
 $crudo: #f3f2da;
 $themegreen: #4e8d7c;
@@ -54,13 +58,20 @@ $navbar-breakpoint: 700px;
   width: 100%;
   text-align: end;
 }
+.card {
+  Height: 100%
+}
 .logobutton {
   font-family: 'Orbitron', sans-serif;
   color: $pink;
 }
+// #logolink {
+//   width: 200px;
+// }
 #logo{
-  height:90%;
-  width: 60%;
+  height:80px;
+  // width: 60%;
+  padding-right: 0;
 }
 // .homepage {
 //     min-width: 500px;

@@ -1,6 +1,5 @@
 from app import db
 from models.base import BaseModel
-
 from models.site import Site
 
 

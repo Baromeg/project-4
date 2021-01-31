@@ -2,9 +2,7 @@ from app import db, bcrypt
 from models.base import BaseModel
 from sqlalchemy.ext.hybrid import hybrid_property
 from email_validator import validate_email, EmailNotValidError
-
 from datetime import *
-
 import jwt
 from environment.config import secret
 

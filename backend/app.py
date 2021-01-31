@@ -22,7 +22,7 @@ from controllers import sites, users  # nopep8
 app.register_blueprint(sites.router, url_prefix="/api")
 app.register_blueprint(users.router, url_prefix="/api")
 
-## registering your blueprints...
+# * Registering your blueprints...
 import os
 
 @app.route('/', defaults={'path': ''}) # homepage

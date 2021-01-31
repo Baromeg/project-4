@@ -21,13 +21,13 @@ favourite_schema = FavouritesSchema()
 router = Blueprint(__name__, 'sites')
 
 
-# get all site
+# * Get all sites
 @router.route('/sites', methods=['GET'])
 def index():
     sites = Site.query.all()
     return site_schema.jsonify(sites, many=True), 200
 
-#search
+# * Search by Country?
 @router.route('/search/<name>', methods=['GET'])
 def search(name):
     sites = Site.query.all()
@@ -35,7 +35,7 @@ def search(name):
     return site_schema.jsonify(matches, many=True), 200
 
 
-# get single site
+# * Get a single site
 @router.route('/sites/<int:id>', methods=['GET'])
 def get_single_site(id):
     site = Site.query.get(id)
@@ -46,7 +46,7 @@ def get_single_site(id):
     return populated_site.jsonify(site), 200
 
 
-# add site
+# * Add a site
 @router.route('/sites', methods=['POST'])
 @secure_route
 def create():
@@ -62,7 +62,7 @@ def create():
     site.save()
     return site_schema.jsonify(site), 200
 
-# edit site
+# * Edit a site
 @router.route('/sites/<int:id>', methods=['PUT'])
 @secure_route
 def edit_site(id):
@@ -76,13 +76,13 @@ def edit_site(id):
     except ValidationError as e:
         return {'errors': e.messages, 'message': 'Something went wrong.'}
 
-    # added object level prem, means check who wants to edit the site
+    # * Added object level prem, means check who wants to edit the site
     if site.user != g.current_user:
         return {'message': 'Unauthorized'}, 401
     site.save()
     return site_schema.jsonify(site), 201
 
-# delete site
+# * Delete a site
 @router.route('/sites/<int:id>', methods=['DELETE'])
 @secure_route
 def remove(id):
@@ -91,7 +91,7 @@ def remove(id):
     return {'message': f'site {id} has been deleted successfully'}
 
 
-#  Add comment
+# * Add a comment
 @router.route('/sites/<int:site_id>/comments', methods=['POST'])
 @secure_route
 def comment_create(site_id):
@@ -103,7 +103,7 @@ def comment_create(site_id):
     comment.save()
     return populated_site.jsonify(site)
 
-# Delete a comment
+# * Delete a comment
 @router.route('/comments/<int:comment_id>', methods=['DELETE'])
 @secure_route
 def remove_comment(comment_id):
@@ -112,7 +112,7 @@ def remove_comment(comment_id):
     comment.remove()
     return populated_site.jsonify(site)
 
-#get single comment
+# * Get single a comment
 @router.route('/comments/<int:comment_id>', methods=['GET'])
 @secure_route
 def get_single_comment(comment_id):
@@ -123,7 +123,7 @@ def get_single_comment(comment_id):
 
     return comment_schema.jsonify(comment), 200
 
-#  Edit a comment
+# * Edit a comment
 @router.route('/comments/<int:comment_id>', methods=['PUT'])
 @secure_route
 def edit_comment(comment_id):
@@ -142,13 +142,13 @@ def edit_comment(comment_id):
     comment.save()
     return comment_schema.jsonify(comment), 201
 
-# Get all favourites
+# * Get all favourites
 @router.route('/favourites', methods=['GET'])
 def get_favourites():
     favourites = Favourites.query.all()
     return favourite_schema.jsonify(favourites, many=True), 200
 
-#check if it is favourite?
+# * Check if it is favourite?
 @router.route('/favourites/<int:site_id>', methods=['GET'])
 @secure_route
 def check_favourite(site_id):
@@ -160,7 +160,7 @@ def check_favourite(site_id):
         return {'isFavourite': False}, 200
 
 
-# Add Favourites
+# * Add a Favourite
 @router.route('/favourites', methods=['POST'])
 @secure_route
 def add_favourite():
@@ -173,9 +173,7 @@ def add_favourite():
     favourite.save()
     return favourite_schema.jsonify(favourite), 200
 
-# Remove Favourites
-
-
+# * Remove a Favourite
 @router.route('/favourites/<int:site_id>', methods=['DELETE'])
 @secure_route
 def remove_favourite(site_id):
@@ -187,14 +185,10 @@ def remove_favourite(site_id):
     site = Site.query.get(site_id)
     return populated_site.jsonify(site)
 
-
-
-# Proxy request
-
-
-@router.route('/proxy-heritage', methods=['GET'])
-def heritage():
-  res = requests.get(
-      'https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-heritage-list%40public-us&lang=ES&rows=2000&sort=date_inscribed')
-  heritage_list = res.json()
-  return jsonify(heritage_list), 200
+# * Proxy request - Not used
+# @router.route('/proxy-heritage', methods=['GET'])
+# def heritage():
+#   res = requests.get(
+#       'https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-heritage-list%40public-us&lang=ES&rows=2000&sort=date_inscribed')
+#   heritage_list = res.json()
+#   return jsonify(heritage_list), 200
